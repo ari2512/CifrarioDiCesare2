@@ -21,7 +21,7 @@ namespace CifrarioDiCesare2
         private void button1_Click(object sender, EventArgs e)
         {
             string Stringa = textBox1.Text;
-            string key = (textBox3.Text);
+            string key =(textBox3.Text);
             if (string.IsNullOrWhiteSpace(Stringa) || (string.IsNullOrWhiteSpace(key)))
             {
                 MessageBox.Show("Inserire i parametri necessari");
@@ -29,11 +29,28 @@ namespace CifrarioDiCesare2
             }
             else
             {
-                int[] lettere = new int[26]; 
-            }
+                int chiaveNumerica = int.Parse(key);
+                for (int i = 0; i < Stringa.Length; i++)
+                {
+                    char lettera = Stringa[i];
+
+                    char nuovaLettera =(char)(lettera + chiaveNumerica);
+
+                          if (nuovaLettera > 'Z')
+                    {
+                        nuovaLettera = (char)(nuovaLettera - 26);
+                    }
+
+                    Console.WriteLine(nuovaLettera);
+                }
+              
 
 
             }
+
+
         }
+
+    }
     }
 
