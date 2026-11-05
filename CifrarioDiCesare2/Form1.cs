@@ -22,7 +22,7 @@ namespace CifrarioDiCesare2
         {
             string fraseChiaro = textBox1.Text.ToUpper();
             string fraseCifrata = "";
-            string key =(textBox3.Text);
+            string key = (textBox3.Text);
             if (string.IsNullOrWhiteSpace(fraseChiaro) || (string.IsNullOrWhiteSpace(key)))
             {
                 MessageBox.Show("Inserire i parametri necessari");
@@ -49,11 +49,11 @@ namespace CifrarioDiCesare2
                     {
                         fraseCifrata = fraseCifrata + ' ';
                     }
-                   
-                  
+
+
                 }
-                label5.Text = fraseCifrata;   
-              
+                label5.Text = fraseCifrata;
+
 
 
             }
@@ -73,30 +73,38 @@ namespace CifrarioDiCesare2
             string key = (textBox2.Text);
             string fraseDecifrata = "";
             int chiaveNumerica = int.Parse(key);
-                 for (int i = 0; i < fraseCifrata.Length; i++)
+            
+            for (int i = 0; i < fraseCifrata.Length; i++)
             {
                 char lettera = fraseCifrata[i];
-
-                if (lettera >= 'A' && lettera <= 'Z')
+                if (lettera != ' ')
                 {
-                    char nuovaLettera = (char)(lettera - chiaveNumerica);
+                 
 
-                    if (nuovaLettera < 'A')
+                    if (lettera >= 'A' && lettera <= 'Z')
                     {
-                        nuovaLettera = (char)(nuovaLettera + 26);
-                    }
+                        char nuovaLettera = (char)(lettera - chiaveNumerica);
 
-                    fraseDecifrata = fraseDecifrata +(char) nuovaLettera;
+                        if (nuovaLettera < 'A')
+                        {
+                            nuovaLettera = (char)(nuovaLettera + 26);
+                        }
+
+                        fraseDecifrata = fraseDecifrata + (char)nuovaLettera;
+                    }
+                    else
+                    {
+                        fraseDecifrata = fraseDecifrata + (char)lettera;
+                    }
                 }
                 else
                 {
-                    fraseDecifrata = fraseDecifrata + (char)lettera;
+                    fraseDecifrata = fraseDecifrata + ' ';
                 }
+
+                label2.Text = fraseDecifrata;
             }
 
-            label2.Text = fraseDecifrata;
         }
-    
     }
-    }
-
+}
