@@ -20,7 +20,7 @@ namespace CifrarioDiCesare2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string fraseChiaro = textBox1.Text;
+            string fraseChiaro = textBox1.Text.ToUpper();
             string fraseCifrata = "";
             string key =(textBox3.Text);
             if (string.IsNullOrWhiteSpace(fraseChiaro) || (string.IsNullOrWhiteSpace(key)))
@@ -34,15 +34,22 @@ namespace CifrarioDiCesare2
                 for (int i = 0; i < fraseChiaro.Length; i++)
                 {
                     char lettera = fraseChiaro[i];
-
-                    char nuovaLettera =(char)(lettera + chiaveNumerica);
-
-                          if ((nuovaLettera > 'Z') || (nuovaLettera >'z' ))
+                    if (lettera != ' ')
                     {
-                        // ESEGUE L'OPERAZIONE SOTTRAENDO IL NUMERO DAL VALORE E NON DAL TESTO IN SE PER SE
-                        nuovaLettera = (char)(nuovaLettera - 26);
+                        char nuovaLettera = (char)(lettera + chiaveNumerica);
+
+                        if ((nuovaLettera > 'Z') || (nuovaLettera > 'z'))
+                        {
+                            // ESEGUE L'OPERAZIONE SOTTRAENDO IL NUMERO DAL VALORE E NON DAL TESTO IN SE PER SE
+                            nuovaLettera = (char)(nuovaLettera - 26);
+                        }
+                        fraseCifrata = fraseCifrata + (char)nuovaLettera;
                     }
-                          fraseCifrata = fraseCifrata+(char)nuovaLettera;
+                    else
+                    {
+                        fraseCifrata = fraseCifrata + ' ';
+                    }
+                   
                   
                 }
                 label5.Text = fraseCifrata;   
@@ -56,27 +63,40 @@ namespace CifrarioDiCesare2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int chiaveNumerica = int.Parse(key);
+            if (string.IsNullOrWhiteSpace(textBox4.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                MessageBox.Show("Inserire i parametri necessari");
+                return;
+            }
+            string fraseChiaro = textBox1.Text.ToUpper();
+            string fraseCifrata = textBox4.Text.ToUpper();
+            string key = (textBox2.Text);
             string fraseDecifrata = "";
-
-            for (int i = 0; i < fraseCifrata.Length; i++)
+            int chiaveNumerica = int.Parse(key);
+                 for (int i = 0; i < fraseCifrata.Length; i++)
             {
                 char lettera = fraseCifrata[i];
 
-                // 1. Sottrai la chiave invece di sommarla
-                char nuovaLettera = (char)(lettera - chiaveNumerica);
-
-                // 2. Se scende sotto la 'A', riportala dentro il range sommano 26
-                if (nuovaLettera < 'A')
+                if (lettera >= 'A' && lettera <= 'Z')
                 {
-                    nuovaLettera = (char)(nuovaLettera + 26);
-                }
+                    char nuovaLettera = (char)(lettera - chiaveNumerica);
 
-                fraseDecifrata = fraseDecifrata + nuovaLettera;
+                    if (nuovaLettera < 'A')
+                    {
+                        nuovaLettera = (char)(nuovaLettera + 26);
+                    }
+
+                    fraseDecifrata = fraseDecifrata +(char) nuovaLettera;
+                }
+                else
+                {
+                    fraseDecifrata = fraseDecifrata + (char)lettera;
+                }
             }
 
-            label5.Text = fraseDecifrata;
+            label2.Text = fraseDecifrata;
         }
+    
     }
     }
 
