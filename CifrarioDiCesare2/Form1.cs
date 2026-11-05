@@ -20,9 +20,10 @@ namespace CifrarioDiCesare2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string Stringa = textBox1.Text;
+            string fraseChiaro = textBox1.Text;
+            string fraseCifrata = "";
             string key =(textBox3.Text);
-            if (string.IsNullOrWhiteSpace(Stringa) || (string.IsNullOrWhiteSpace(key)))
+            if (string.IsNullOrWhiteSpace(fraseChiaro) || (string.IsNullOrWhiteSpace(key)))
             {
                 MessageBox.Show("Inserire i parametri necessari");
                 return;
@@ -30,19 +31,21 @@ namespace CifrarioDiCesare2
             else
             {
                 int chiaveNumerica = int.Parse(key);
-                for (int i = 0; i < Stringa.Length; i++)
+                for (int i = 0; i < fraseChiaro.Length; i++)
                 {
-                    char lettera = Stringa[i];
+                    char lettera = fraseChiaro[i];
 
                     char nuovaLettera =(char)(lettera + chiaveNumerica);
 
-                          if (nuovaLettera > 'Z')
+                          if ((nuovaLettera > 'Z') || (nuovaLettera >'z' ))
                     {
+                        // ESEGUE L'OPERAZIONE SOTTRAENDO IL NUMERO DAL VALORE E NON DAL TESTO IN SE PER SE
                         nuovaLettera = (char)(nuovaLettera - 26);
                     }
-
-                    Console.WriteLine(nuovaLettera);
+                          fraseCifrata = fraseCifrata+(char)nuovaLettera;
+                  
                 }
+                label5.Text = fraseCifrata;   
               
 
 
@@ -51,6 +54,29 @@ namespace CifrarioDiCesare2
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int chiaveNumerica = int.Parse(key);
+            string fraseDecifrata = "";
+
+            for (int i = 0; i < fraseCifrata.Length; i++)
+            {
+                char lettera = fraseCifrata[i];
+
+                // 1. Sottrai la chiave invece di sommarla
+                char nuovaLettera = (char)(lettera - chiaveNumerica);
+
+                // 2. Se scende sotto la 'A', riportala dentro il range sommano 26
+                if (nuovaLettera < 'A')
+                {
+                    nuovaLettera = (char)(nuovaLettera + 26);
+                }
+
+                fraseDecifrata = fraseDecifrata + nuovaLettera;
+            }
+
+            label5.Text = fraseDecifrata;
+        }
     }
     }
 
