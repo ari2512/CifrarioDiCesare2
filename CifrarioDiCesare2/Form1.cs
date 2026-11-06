@@ -106,5 +106,91 @@ namespace CifrarioDiCesare2
             }
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        
+           
+        {
+            string fraseChiaro = textBox8.Text.ToUpper();
+            string fraseCifrata = "";
+            int chiaveNumerica = 3;
+
+            if (string.IsNullOrWhiteSpace(fraseChiaro))
+            {
+                MessageBox.Show("Inserire i parametri necessari");
+                return;
+            }
+
+            for (int i = 0; i < fraseChiaro.Length; i++)
+            {
+                char lettera = fraseChiaro[i];
+                if (lettera != ' ')
+                {
+                    if (lettera >= 'A' && lettera <= 'Z')
+                    {
+                        char nuovaLettera = (char)(lettera + chiaveNumerica);
+                        if (nuovaLettera > 'Z')
+                        {
+                            nuovaLettera = (char)(nuovaLettera - 26);
+                        }
+                        fraseCifrata += nuovaLettera;
+                    }
+                    else
+                    {
+                        fraseCifrata += lettera;
+                    }
+                }
+                else
+                {
+                    fraseCifrata += ' ';
+                }
+            }
+
+            label11.Text = fraseCifrata;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           
+        
+            string fraseCifrata = textBox6.Text.ToUpper();
+            string fraseDecifrata = "";
+            int chiaveNumerica = 3;
+
+            if (string.IsNullOrWhiteSpace(fraseCifrata))
+            {
+                MessageBox.Show("Inserire i parametri necessari");
+                return;
+            }
+
+            for (int i = 0; i < fraseCifrata.Length; i++)
+            {
+                char lettera = fraseCifrata[i];
+                if (lettera != ' ')
+                {
+                    if (lettera >= 'A' && lettera <= 'Z')
+                    {
+                        char nuovaLettera = (char)(lettera - chiaveNumerica);
+                        if (nuovaLettera < 'A')
+                        {
+                            nuovaLettera = (char)(nuovaLettera + 26);
+                        }
+                        fraseDecifrata += nuovaLettera;
+                    }
+                    else
+                    {
+                        fraseDecifrata += lettera;
+                    }
+                }
+                else
+                {
+                    fraseDecifrata += ' ';
+                }
+            }
+
+            label7.Text = fraseDecifrata;
+        }
     }
-}
+    }
+    
+
