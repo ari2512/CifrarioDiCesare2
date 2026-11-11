@@ -271,8 +271,7 @@ namespace CifrarioDiCesare2
                     fraseDecifrata += lettera;
                 }
             }
-
-            label2.Text = fraseDecifrata;
+                label17.Text= fraseDecifrata;
         }
     }
     }
