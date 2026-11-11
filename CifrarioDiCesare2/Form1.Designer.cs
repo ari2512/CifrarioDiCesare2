@@ -389,6 +389,7 @@
             this.button5.TabIndex = 44;
             this.button5.Text = "<< DECRIPTA >>";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label17
             // 
@@ -450,6 +451,7 @@
             this.button6.TabIndex = 38;
             this.button6.Text = "<< CRIPTA >>";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label20
             // 

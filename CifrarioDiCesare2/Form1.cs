@@ -30,7 +30,7 @@ namespace CifrarioDiCesare2
             }
             else
             {
-                int chiaveNumerica = int.Parse(key);
+                int chiaveNumerica = int.Parse(key) % 26;
                 for (int i = 0; i < fraseChiaro.Length; i++)
                 {
                     char lettera = fraseChiaro[i];
@@ -72,14 +72,14 @@ namespace CifrarioDiCesare2
             string fraseCifrata = textBox4.Text.ToUpper();
             string key = (textBox2.Text);
             string fraseDecifrata = "";
-            int chiaveNumerica = int.Parse(key);
-            
+            int chiaveNumerica = int.Parse(key) % 26;
+
             for (int i = 0; i < fraseCifrata.Length; i++)
             {
                 char lettera = fraseCifrata[i];
                 if (lettera != ' ')
                 {
-                 
+
 
                     if (lettera >= 'A' && lettera <= 'Z')
                     {
@@ -108,8 +108,8 @@ namespace CifrarioDiCesare2
         }
 
         private void button4_Click(object sender, EventArgs e)
-        
-           
+
+
         {
             string fraseChiaro = textBox8.Text.ToUpper();
             string fraseCifrata = "";
@@ -151,8 +151,8 @@ namespace CifrarioDiCesare2
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
-        
+
+
             string fraseCifrata = textBox6.Text.ToUpper();
             string fraseDecifrata = "";
             int chiaveNumerica = 3;
@@ -190,7 +190,94 @@ namespace CifrarioDiCesare2
 
             label7.Text = fraseDecifrata;
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            string fraseChiaro = textBox1.Text.ToUpper();
+            string key = textBox3.Text.ToUpper();
+            string fraseCifrata = "";
+
+            if (string.IsNullOrWhiteSpace(fraseChiaro) || string.IsNullOrWhiteSpace(key))
+            {
+                MessageBox.Show("Inserire i parametri necessari");
+                return;
+            }
+
+            int keyIndex = 0;
+
+            for (int i = 0; i < fraseChiaro.Length; i++)
+            {
+                char lettera = fraseChiaro[i];
+
+                if (lettera >= 'A' && lettera <= 'Z')
+                {
+
+                    int shift = key[keyIndex % key.Length] - 'A';
+                    char nuovaLettera = (char)(lettera + shift);
+
+                    if (nuovaLettera > 'Z')
+                    {
+                        nuovaLettera = (char)(nuovaLettera - 26);
+                    }
+
+                    fraseCifrata += nuovaLettera;
+                    keyIndex++;
+                }
+                else
+                {
+                    fraseCifrata += lettera;
+                }
+
+                label5.Text = fraseCifrata;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        
+        {
+            if (string.IsNullOrWhiteSpace(textBox4.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                MessageBox.Show("Inserire i parametri necessari");
+                return;
+            }
+
+            string fraseCifrata = textBox4.Text.ToUpper();
+            string key = textBox2.Text.ToUpper();
+            string fraseDecifrata = "";
+
+            int keyIndex = 0;
+
+            for (int i = 0; i < fraseCifrata.Length; i++)
+            {
+                char lettera = fraseCifrata[i];
+
+                if (lettera >= 'A' && lettera <= 'Z')
+                {
+                    
+                    int shift = key[keyIndex % key.Length] - 'A';
+                    char nuovaLettera = (char)(lettera - shift);
+
+                    if (nuovaLettera < 'A')
+                    {
+                        nuovaLettera = (char)(nuovaLettera + 26);
+                    }
+
+                    fraseDecifrata += nuovaLettera;
+                    keyIndex++;
+                }
+                else
+                {
+                    fraseDecifrata += lettera;
+                }
+            }
+
+            label2.Text = fraseDecifrata;
+        }
     }
     }
-    
+
+
+
+
 
