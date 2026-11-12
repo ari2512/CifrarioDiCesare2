@@ -27,7 +27,7 @@ namespace CifrarioDiCesare2
             {
                 MessageBox.Show("Inserire i parametri necessari");
                 return;
-            }
+            } 
             else
             {
                 int chiaveNumerica = int.Parse(key) % 26;
@@ -194,8 +194,8 @@ namespace CifrarioDiCesare2
         private void button6_Click(object sender, EventArgs e)
         {
 
-            string fraseChiaro = textBox1.Text.ToUpper();
-            string key = textBox3.Text.ToUpper();
+            string fraseChiaro = textBox12.Text.ToUpper();
+            string key = textBox11.Text.ToUpper();
             string fraseCifrata = "";
 
             if (string.IsNullOrWhiteSpace(fraseChiaro) || string.IsNullOrWhiteSpace(key))
@@ -203,6 +203,7 @@ namespace CifrarioDiCesare2
                 MessageBox.Show("Inserire i parametri necessari");
                 return;
             }
+
 
             int keyIndex = 0;
 
@@ -229,21 +230,21 @@ namespace CifrarioDiCesare2
                     fraseCifrata += lettera;
                 }
 
-                label5.Text = fraseCifrata;
+                label17.Text = fraseCifrata;
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         
         {
-            if (string.IsNullOrWhiteSpace(textBox4.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
+            if (string.IsNullOrWhiteSpace(textBox10.Text) || string.IsNullOrWhiteSpace(textBox9.Text))
             {
                 MessageBox.Show("Inserire i parametri necessari");
                 return;
             }
 
-            string fraseCifrata = textBox4.Text.ToUpper();
-            string key = textBox2.Text.ToUpper();
+            string fraseCifrata = textBox10.Text.ToUpper();
+            string key = textBox9.Text.ToUpper();
             string fraseDecifrata = "";
 
             int keyIndex = 0;
@@ -271,8 +272,9 @@ namespace CifrarioDiCesare2
                     fraseDecifrata += lettera;
                 }
             }
-                label17.Text= fraseDecifrata;
+                label14.Text= fraseDecifrata;
         }
+
     }
     }
 
