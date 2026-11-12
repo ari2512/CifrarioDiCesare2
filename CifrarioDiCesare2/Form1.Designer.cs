@@ -42,16 +42,12 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -210,19 +206,11 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(430, 501);
+            this.label7.Location = new System.Drawing.Point(437, 445);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 16);
             this.label7.TabIndex = 37;
             this.label7.Text = "RISULTATO:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox5.Location = new System.Drawing.Point(555, 390);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 36;
             // 
             // textBox6
             // 
@@ -244,22 +232,11 @@
             this.label9.TabIndex = 34;
             this.label9.Text = "Inserire una stringa";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(411, 390);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(138, 16);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Inserire la chiave >";
-            // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Location = new System.Drawing.Point(414, 430);
+            this.button3.Location = new System.Drawing.Point(417, 380);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(132, 47);
             this.button3.TabIndex = 32;
@@ -272,19 +249,11 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label11.Location = new System.Drawing.Point(430, 261);
+            this.label11.Location = new System.Drawing.Point(437, 207);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 16);
             this.label11.TabIndex = 31;
             this.label11.Text = "RISULTATO:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox7.Location = new System.Drawing.Point(525, 159);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 30;
             // 
             // textBox8
             // 
@@ -306,22 +275,11 @@
             this.label12.TabIndex = 28;
             this.label12.Text = "Inserire una stringa";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(381, 159);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(138, 16);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Inserire la chiave >";
-            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(417, 192);
+            this.button4.Location = new System.Drawing.Point(417, 147);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(132, 47);
             this.button4.TabIndex = 26;
@@ -508,16 +466,12 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
@@ -555,16 +509,12 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox9;
